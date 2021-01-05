@@ -5,7 +5,7 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 
 import { themeType } from './theme'
-import { rooms } from './components/Rooms/Rooms'
+import { roomss } from './components/Rooms/Rooms'
 import Button from './components/Button';
 
 
@@ -140,7 +140,7 @@ export default function Contact() {
                                 }}
                             >
                                 <option aria-label="None" value="" />
-                                {rooms.map((m, i) => <option key={i} value={m.h2}>{m.h2}</option>)}
+                                {roomss.map((m, i) => <option key={i} value={m.h2}>{m.h2}</option>)}
 
                             </Select>
                         </FormControl>
