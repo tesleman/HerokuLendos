@@ -1,17 +1,14 @@
-import { Grid, makeStyles } from '@material-ui/core'
-import Image from 'next/image'
-import React from 'react'
-import { themeType } from '../../theme';
+import { Grid, makeStyles } from "@material-ui/core";
+import Image from "next/image";
+import React from "react";
+import { themeType } from "../../theme";
 
 const useStyle = makeStyles((theme: themeType) => ({
     root: {
-
         padding: "15px 15px",
         "& p": {
-
-            textAlign: "left",
+            textAlign: "left"
         }
-
     },
     h2: {
         textAlign: "left",
@@ -31,27 +28,27 @@ const useStyle = makeStyles((theme: themeType) => ({
     bg: {
         padding: "15px 15px",
         backgroundColor: "#ffffff",
-        boxShadow: '0 3px 5px 2px rgba(76, 75, 70, 0.3)',
+        boxShadow: "0 3px 5px 2px rgba(76, 75, 70, 0.3)"
     }
-
-}))
+}));
 type P = ReturnType<typeof useStyle>;
 export default function Item() {
-    const style: P = useStyle()
+    const style: P = useStyle();
     return (
         <Grid className={style.root} item xs={4}>
             <div className={style.bg}>
                 <Image
-                    src="/bigstock-Luxury-Bedroom-5449511-800x500.JPG"
+                    src="/bigstock-Luxury-Bedroom-5449511-800x500.jpg"
                     alt="Picture of the author"
                     width={280}
                     height={175}
                 />
                 <h2 className={style.h2}>View Our Rooms</h2>
-                <p>Each uniquely decorated room in our stately mansion has its own distinct .</p>
-
-
+                <p>
+                    Each uniquely decorated room in our stately mansion has its
+                    own distinct .
+                </p>
             </div>
         </Grid>
-    )
+    );
 }
