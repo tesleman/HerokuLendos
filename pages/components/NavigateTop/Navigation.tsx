@@ -1,12 +1,10 @@
-import { Container, makeStyles } from '@material-ui/core'
-import Link from 'next/link'
-import React from 'react'
-
-
+import { Container, makeStyles } from "@material-ui/core";
+import Link from "next/link";
+import React from "react";
 
 let useStyles = makeStyles((theme) => ({
     navigate: {
-        easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
         leavingScreen: 195,
         boxShadow: "0 5px 5px rgba(182, 182, 182, 0.75)",
         width: "100%"
@@ -21,8 +19,7 @@ let useStyles = makeStyles((theme) => ({
         alignItems: "center",
         listStyleType: "none",
 
-        fontFamily: "Playfair Display",
-
+        fontFamily: "Playfair Display"
     },
     navigateSub: {
         zIndex: 5,
@@ -36,7 +33,7 @@ let useStyles = makeStyles((theme) => ({
         marginTop: 10,
         alignItems: "space-between",
         "&:hover": {
-            cursor: 'pointer'
+            cursor: "pointer"
         }
     },
     navigateLinck: {
@@ -52,8 +49,8 @@ let useStyles = makeStyles((theme) => ({
             borderTopStyle: "solid",
             borderTopColor: theme.palette.secondary.main,
             backgroundColor: "rgba(d9, d9, d9, 0.3)",
-            boxShadow: '0 3px 5px 2px rgba(76, 75, 70, 0.3)',
-        },
+            boxShadow: "0 3px 5px 2px rgba(76, 75, 70, 0.3)"
+        }
     },
     navigateLinckSub: {
         padding: "0 10px",
@@ -72,92 +69,93 @@ let useStyles = makeStyles((theme) => ({
         "&:hover": {
             color: theme.palette.secondary.main,
             backgroundColor: "#d9d9d9",
-            boxShadow: '0 3px 5px 2px rgba(76, 75, 70, .3)',
-        },
-
+            boxShadow: "0 3px 5px 2px rgba(76, 75, 70, .3)"
+        }
     },
 
     navSubA: {
         margin: "auto",
-        textAlign: "center",
-
+        textAlign: "center"
     }
+}));
 
+let categories = [
+    {
+        name: "Домашня",
+        url: ""
+    },
+    {
+        name: "Комнаты",
+        url: "allrooms"
+    },
+    {
+        name: "Букинг",
+        url: "contact"
+    },
+    {
+        name: "Про нас",
+        url: "about"
+    }
+];
 
-}))
-
+interface categoryTypes {
+    name: string;
+    url: string;
+    subcat?: Array<string>;
+}
 
 export default function s() {
-    let categories = [{
-        name: 'Home',
-        url: ''
-    }, {
-        name: 'Первый',
-        url: 'first',
-        subcat: [{
-            name: 'Отэто',
-            url: 'seconds1'
-        },
-        {
-            name: 'Secocat2',
-            url: 'seubcat2'
-        },
-        {
-            name: 'Secocat2',
-            url: 'seubcat2'
-        }]
-    }, {
-        name: 'Second',
-        url: 'second',
-        subcat: [{
-            name: 'Secondsubcat1',
-            url: 'secondsubcat1'
-        },
-        {
-            name: 'Secondsubcat2',
-            url: 'secondsubcat2'
-        }]
-    }, {
-        name: 'Products',
-        url: 'products'
-    }]
+    let style = useStyles();
 
-    let style = useStyles()
-
-
-    const [state, setstate] = React.useState('')
+    const [state, setstate] = React.useState("");
     return (
         <nav className={style.navigate}>
             <Container>
-
-
                 <ul className={style.navigateUl}>
-                    {categories.map((m, index) => <Link key={index} href={`/${m.url}`} >
-                        <li
-                            onMouseOver={() => setstate(m.name)}
-                            onMouseLeave={() => setstate('')}
-                            className={style.navigateLinck} >
-                            {m.name}
-                            {m.subcat ? <ul className={style.navigateSub} >{m.subcat.map((l, i) => <Sub key={i} {...l} state={state} names={m.name} />)}</ul> : ""} </li>
-                    </Link>)}
-
+                    {categories.map((m: categoryTypes, index: number) => (
+                        <Link key={index} href={`/${m.url}`}>
+                            <li
+                                onMouseOver={() => setstate(m.name)}
+                                onMouseLeave={() => setstate("")}
+                                className={style.navigateLinck}
+                            >
+                                {m.name}
+                                {m.subcat ? (
+                                    <ul className={style.navigateSub}>
+                                        {m.subcat.map((l, i) => (
+                                            <Sub
+                                                key={i}
+                                                {...l}
+                                                state={state}
+                                                names={m.name}
+                                            />
+                                        ))}
+                                    </ul>
+                                ) : (
+                                    ""
+                                )}{" "}
+                            </li>
+                        </Link>
+                    ))}
                 </ul>
-
-
-            </Container >
+            </Container>
         </nav>
-    )
+    );
 }
 
 const Sub = (props) => {
-    let style = useStyles()
-    return (<>
-        {props.state === props.names ? (
-            <Link href={`/${props.url}`}>
-                <li className={style.navigateLinckSub}>
-                    <a className={style.navSubA}>{props.name}</a>
-                </li>
-            </Link>
-        ) : ""}
-    </>)
-}
+    let style = useStyles();
+    return (
+        <>
+            {props.state === props.names ? (
+                <Link href={`/${props.url}`}>
+                    <li className={style.navigateLinckSub}>
+                        <a className={style.navSubA}>{props.name}</a>
+                    </li>
+                </Link>
+            ) : (
+                ""
+            )}
+        </>
+    );
+};

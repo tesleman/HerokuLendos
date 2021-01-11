@@ -1,12 +1,11 @@
-import React from 'react';
-import RoomIcon from '@material-ui/icons/Room';
-import PhoneIcon from '@material-ui/icons/Phone';
-import EmailIcon from '@material-ui/icons/Email';
-import FacebookIcon from '@material-ui/icons/Facebook';
+import React from "react";
+import RoomIcon from "@material-ui/icons/Room";
+import PhoneIcon from "@material-ui/icons/Phone";
+import EmailIcon from "@material-ui/icons/Email";
+import FacebookIcon from "@material-ui/icons/Facebook";
 
-import { makeStyles } from '@material-ui/core/styles';
-
-
+import { makeStyles } from "@material-ui/core/styles";
+import Head from "next/head";
 
 const useStyle = makeStyles((theme) => ({
     base: {
@@ -16,7 +15,6 @@ const useStyle = makeStyles((theme) => ({
         backgroundColor: theme.palette.primary.main,
         flexDirection: "row",
         overflow: "hidden"
-
     },
     leftIcons: {
         justifyContent: "flex-start",
@@ -25,8 +23,7 @@ const useStyle = makeStyles((theme) => ({
         width: "75%"
     },
     icon: {
-        color: theme.palette.secondary.main,
-
+        color: theme.palette.secondary.main
     },
     text: {
         color: theme.palette.primary.contrastText,
@@ -45,11 +42,9 @@ const useStyle = makeStyles((theme) => ({
         flexDirection: "row",
         display: "flex",
         color: theme.palette.primary.contrastText,
-        alignSelf: "center",
-
+        alignSelf: "center"
     },
     icons: {
-
         padding: "6px 13px",
         borderRightStyle: "solid",
         borderRightColor: theme.palette.primary.contrastText,
@@ -57,29 +52,36 @@ const useStyle = makeStyles((theme) => ({
         height: "100%",
         fontSize: 60,
         cursor: "pointer",
-        '&:first-child': {
+        "&:first-child": {
             borderLeft: "1px !important",
             borderLeftColor: theme.palette.primary.contrastText,
-            borderLeftStyle: "solid !important",
+            borderLeftStyle: "solid !important"
         },
         "&:hover": {
             color: "white"
         }
     }
-
-}))
+}));
 
 export default function TopLine() {
-    const style = useStyle()
+    const style = useStyle();
 
     return (
         <div className={style.base}>
-
+            <Head>
+                <title>My page title</title>
+                <link
+                    rel="stylesheet"
+                    href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+                ></link>
+            </Head>
 
             <div className={style.leftIcons}>
                 <div className={style.flexDir}>
                     <RoomIcon className={style.icon} />
-                    <span className={style.text}>8903 Grove St, Healdsburg, CA 95448</span>
+                    <span className={style.text}>
+                        8903 Grove St, Healdsburg, CA 95448
+                    </span>
                 </div>
                 <div className={style.flexDir}>
                     <PhoneIcon className={style.icon} />
@@ -89,9 +91,6 @@ export default function TopLine() {
                     <EmailIcon className={style.icon} />
                     <span className={style.text}>booking@website.com</span>
                 </div>
-
-
-
             </div>
 
             <div className={style.righrIcons}>
@@ -99,8 +98,6 @@ export default function TopLine() {
                 <FacebookIcon className={style.icons} />
                 <FacebookIcon className={style.icons} />
             </div>
-
-
         </div>
-    )
+    );
 }

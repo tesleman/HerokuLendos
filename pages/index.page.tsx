@@ -8,7 +8,7 @@ import Information from "./components/Info/Information";
 import RunningNumbers from "./components/RunningNimbers/RunningNumbers";
 import Rooms from "./components/Rooms/Rooms";
 import Amenities from "./components/Amenities/Amenities";
-import BottomMenue from "./components/BottomMenue/BottomMenue";
+import { NextPageContext } from "next";
 
 export const roomss = [
     {
@@ -43,12 +43,6 @@ export const roomss = [
 
 const useStyle = makeStyles({
     bacground: {
-        position: "absolute",
-        left: 0,
-        right: 0,
-        top: 0,
-        bottom: 0,
-        zIndex: -1,
         "&::after": {
             content: '""',
             backgroundColor: "#9e9e9e",
@@ -80,12 +74,11 @@ export default function Home({ rooms }) {
             <RunningNumbers />
             <Rooms rooms={rooms} />
             <Amenities />
-            <BottomMenue />
         </div>
     );
 }
 
-Home.getInitialProps = (ctx) => {
+Home.getInitialProps = (ctx: NextPageContext) => {
     const rooms = [
         {
             iamg: "/papaya-800x500.jpg",

@@ -30,7 +30,13 @@ const ForSection: React.FC<propsParType> = ({ location }: propsParType) => {
             <div className={style.googleMap}>
                 <GoogleMapReact
                     bootstrapURLKeys={{
-                        key: "AIzaSyDQJ8oqv4tkXB_6RtRGaqUyWLYjL5xsXWQ"
+                        key: "",
+                        libraries: [
+                            "places",
+                            "geometry",
+                            "drawing",
+                            "visualization"
+                        ]
                     }}
                     yesIWantToUseGoogleMapApiInternals
                     defaultCenter={location}

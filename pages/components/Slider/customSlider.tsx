@@ -1,9 +1,9 @@
-import { makeStyles } from '@material-ui/core/styles'
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import React from 'react'
-import Slider, { LazyLoadTypes } from 'react-slick';
-import Slide from './Slide'
+import { makeStyles } from "@material-ui/core/styles";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import React from "react";
+import Slider, { LazyLoadTypes } from "react-slick";
+import Slide from "./Slide";
 
 const useStyle = makeStyles({
     slider: {
@@ -12,7 +12,7 @@ const useStyle = makeStyles({
         marginTop: 0,
         maxHeight: "100vh",
         width: "100%",
-        margin: "0 auto",
+        margin: "0 auto"
     },
     slickDots: {
         marginTop: -84,
@@ -29,15 +29,16 @@ const useStyle = makeStyles({
         height: 50,
         margin: "0 5px",
         padding: 0,
-        cursor: "pointer",
-    }, a: {
+        cursor: "pointer"
+    },
+    a: {
         position: "relative",
         width: 50,
         height: 50,
         margin: "0 5px",
         padding: 0,
         cursor: "pointer",
-        left: -15,
+        left: -15
     },
     prev: {
         left: 25,
@@ -59,7 +60,8 @@ const useStyle = makeStyles({
         color: "white",
         "& svg": {
             flexDirection: "row",
-            display: "flex", padding: 5,
+            display: "flex",
+            padding: 5,
             justifyContent: "center",
             marginLeft: 4
         }
@@ -86,32 +88,41 @@ const useStyle = makeStyles({
             flexDirection: "row",
             display: "flex",
             padding: 5,
-            justifyContent: "center",
+            justifyContent: "center"
         }
     }
+});
 
-
-})
-
+const item = [
+    {
+        text: "dasd",
+        img:
+            "https://unsplash.com/blog/content/images/size/w1600/2020/12/lake-antholz.jpg"
+    },
+    {
+        text: "dasd",
+        img:
+            "https://unsplash.com/blog/content/images/2020/12/eberhard-grossgasteiger-TMHL7wald8I-unsplash.jpg"
+    },
+    {
+        text: "dasd",
+        img:
+            "https://unsplash.com/blog/content/images/size/w1000/2020/12/eberhard-grossgasteiger-Bbac08Xv9D8-unsplash.jpg"
+    }
+];
 export default function CustomSlider() {
+    let style = useStyle();
 
-
-    let style = useStyle()
-    let item = [
-        { text: "dasd", img: 'https://unsplash.com/blog/content/images/size/w1600/2020/12/lake-antholz.jpg' },
-        { text: "dasd", img: 'https://unsplash.com/blog/content/images/2020/12/eberhard-grossgasteiger-TMHL7wald8I-unsplash.jpg' },
-        { text: "dasd", img: 'https://unsplash.com/blog/content/images/size/w1000/2020/12/eberhard-grossgasteiger-Bbac08Xv9D8-unsplash.jpg' }]
-
-    const slider = React.useRef(null)
+    const slider = React.useRef(null);
 
     const next = () => {
         slider.current.slickNext();
-    }
+    };
     const previous = () => {
         slider.current.slickPrev();
-    }
+    };
 
-    const ondemand: LazyLoadTypes = "ondemand"
+    const ondemand: LazyLoadTypes = "ondemand";
 
     const setyings = {
         lazyLoad: ondemand,
@@ -130,21 +141,14 @@ export default function CustomSlider() {
                     <img className={style.img} src={`${item[i].img}`} />
                 </a>
             );
-        },
-
-    }
+        }
+    };
     return (
-
         <div>
-            <Slider
-                ref={slider}
-                className={style.slider}
-                {...setyings}
-
-            >
-                {
-                    item.map((itm, insex) => <Slide key={insex} {...itm} />)
-                }
+            <Slider ref={slider} className={style.slider} {...setyings}>
+                {item.map((itm, insex) => (
+                    <Slide key={insex} {...itm} />
+                ))}
             </Slider>
             <div style={{ textAlign: "center" }}>
                 <button className={style.prev} onClick={previous}>
@@ -155,7 +159,5 @@ export default function CustomSlider() {
                 </button>
             </div>
         </div>
-
-    )
+    );
 }
-

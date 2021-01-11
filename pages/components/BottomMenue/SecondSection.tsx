@@ -30,6 +30,9 @@ const useStyle = makeStyles((theme: themeType) => ({
             color: "white",
             position: "relative"
         }
+    },
+    about: {
+        marginBottom: 15
     }
 }));
 type P = ReturnType<typeof useStyle>;
@@ -39,9 +42,8 @@ export default function SecondSection({ categories }) {
     return (
         <div>
             <ul>
-                {" "}
-                About
-                {categories.map((item, i) => (
+                <div className={style.about}> About</div>
+                {categories.map((item: Array<string>, i: number) => (
                     <li className={style.root} key={i}>
                         <a href=""> {item}</a>
                     </li>

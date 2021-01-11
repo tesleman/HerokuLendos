@@ -9,6 +9,8 @@ const useStyle = makeStyles((theme: themeType) => ({
     root: {
         backgroundColor: theme.palette.primary.main,
         color: "white",
+        padding: " 16px 0",
+        marginTop: 15,
         "& ul li": {
             listStyleType: "none"
         }
@@ -23,6 +25,7 @@ const categories = [
     "Wedding & Reception",
     "Pet Policy"
 ];
+
 const location = {
     address: "1600 Amphitheatre Parkway, Mountain View, california.",
     lat: 37.42216,

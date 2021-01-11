@@ -37,15 +37,14 @@ export default function Contact() {
     React.useEffect(() => {
         console.log("isValid", isValid);
         console.log("isDirty ", isDirty);
+        console.log("formState ", formState.dirtyFields);
     }, [formState]);
 
     const handlData = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = e.target.value;
-        handleDateChange(newValue);
+        handleDateChange(e.target.value);
     };
     const handleSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = e.target.value;
-        handleSelectChange(newValue);
+        handleSelectChange(e.target.value);
     };
 
     const onSubmit = async (data: any) => {
