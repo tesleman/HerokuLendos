@@ -1,16 +1,13 @@
-import { Grid, makeStyles } from '@material-ui/core'
-import Image from 'next/image'
-import React from 'react'
+import { Grid, makeStyles } from "@material-ui/core";
+import Image from "next/image";
+import React from "react";
 
-import { themeType } from '../../theme';
-
-import Button from '../Button'
+import { themeType } from "../../theme";
+import Button from "../Button";
 
 const useStyle = makeStyles((theme: themeType) => ({
     root: {
-        padding: "15px 15px",
-
-
+        padding: "15px 15px"
     },
     pWrap: {
         padding: 10,
@@ -23,7 +20,7 @@ const useStyle = makeStyles((theme: themeType) => ({
             lineClamp: 3,
             display: "flex",
             textOverflow: "ellipsis",
-            boxOrient: "vertical",
+            boxOrient: "vertical"
         }
     },
     h2: {
@@ -42,27 +39,20 @@ const useStyle = makeStyles((theme: themeType) => ({
         opacity: 0.5
     },
     bg: {
-
         height: 460,
         padding: "15px 15px",
         backgroundColor: "#ffffff",
-        boxShadow: '0 3px 5px 2px rgba(76, 75, 70, 0.3)',
+        boxShadow: "0 3px 5px 2px rgba(76, 75, 70, 0.3)"
     }
-
-}))
+}));
 type P = ReturnType<typeof useStyle>;
 
 export default function Room({ index, iamg, h2, prise, p }) {
-    const style: P = useStyle()
-
-
+    const style: P = useStyle();
     return (
         <Grid className={style.root} item xs={3}>
-
             <div className={style.bg}>
-                <div
-
-                >
+                <div>
                     <Image
                         src={iamg}
                         alt="Picture of the author"
@@ -72,13 +62,12 @@ export default function Room({ index, iamg, h2, prise, p }) {
                 </div>
                 <h2 className={style.h2}>{h2}</h2>
                 <div className={style.pWrap}>
-                    <p>{p}</p></div>
+                    <p>{p}</p>
+                </div>
                 <div className={style.prise}>{prise}/night</div>
 
-                <Button href={index}> Details</Button>
-
-
+                <Button href={index}>Details</Button>
             </div>
         </Grid>
-    )
+    );
 }
