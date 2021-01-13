@@ -1,4 +1,5 @@
 import { Container, makeStyles } from "@material-ui/core";
+
 import Link from "next/link";
 import React from "react";
 
@@ -7,7 +8,9 @@ let useStyles = makeStyles((theme) => ({
         easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
         leavingScreen: 195,
         boxShadow: "0 5px 5px rgba(182, 182, 182, 0.75)",
-        width: "100%"
+        width: "100%",
+        backgroundColor: "transparent",
+        zIndex: 9999
     },
     navigateUl: {
         display: "flex",
@@ -18,7 +21,7 @@ let useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
         listStyleType: "none",
-
+        zIndex: 9999,
         fontFamily: "Playfair Display"
     },
     navigateSub: {

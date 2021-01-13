@@ -21,7 +21,7 @@ type propsParType = {
     };
 };
 
-const ForSection: React.FC<propsParType> = ({ location }: propsParType) => {
+const ForSection: React.FC<propsParType> = ({ location }) => {
     const style: P = useStyle();
 
     return (
@@ -30,15 +30,8 @@ const ForSection: React.FC<propsParType> = ({ location }: propsParType) => {
             <div className={style.googleMap}>
                 <GoogleMapReact
                     bootstrapURLKeys={{
-                        key: "",
-                        libraries: [
-                            "places",
-                            "geometry",
-                            "drawing",
-                            "visualization"
-                        ]
+                        key: ""
                     }}
-                    yesIWantToUseGoogleMapApiInternals
                     defaultCenter={location}
                     zoom={17}
                 >

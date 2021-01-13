@@ -42,26 +42,26 @@ export const roomss = [
 ];
 
 const useStyle = makeStyles({
-    bacground: {
-        "&::after": {
-            content: '""',
-            backgroundColor: "#9e9e9e",
-            position: "absolute",
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
-            zIndex: -1,
-            opacity: 0.3
-        }
-    }
+    // bacground: {
+    //     "&::after": {
+    //         content: '""',
+    //         backgroundColor: "transparent",
+    //         position: "absolute",
+    //         left: 0,
+    //         right: 0,
+    //         top: 0,
+    //         bottom: 0,
+    //         zIndex: -1,
+    //         opacity: 0.3
+    //     }
+    // }
 });
 
 export default function Home({ rooms }) {
     let style = useStyle();
 
     return (
-        <div className={style.bacground}>
+        <div>
             <Head>
                 <title>My page title</title>
                 <link
