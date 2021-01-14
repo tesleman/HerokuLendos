@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BottomMenue from "../components/BottomMenue/BottomMenue";
 
-export default function Layauts({ children }) {
+export default function Layauts({ children }): React.ReactElement {
     return (
         <div>
             <TopLine />

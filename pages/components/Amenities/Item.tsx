@@ -32,7 +32,7 @@ const useStyle = makeStyles((theme: themeType) => ({
     }
 }));
 type P = ReturnType<typeof useStyle>;
-export default function Item() {
+export default function Item(): React.ReactElement {
     const style: P = useStyle();
     return (
         <Grid className={style.root} item xs={4}>

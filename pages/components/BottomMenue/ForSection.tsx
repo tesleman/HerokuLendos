@@ -21,7 +21,7 @@ type propsParType = {
     };
 };
 
-const ForSection: React.FC<propsParType> = ({ location }) => {
+const ForSection: React.FC<propsParType> = ({ location }: propsParType) => {
     const style: P = useStyle();
 
     return (

@@ -21,7 +21,7 @@ const useStyle = makeStyles((theme: themeType) => ({
     }
 }));
 type P = ReturnType<typeof useStyle>;
-export default function Contact() {
+export default function Contact(): React.ReactElement {
     const style: P = useStyle();
     const date = new Date();
     const { register, errors, handleSubmit, formState, setValue } = useForm({

@@ -37,13 +37,18 @@ const useStyle = makeStyles((theme: themeType) => ({
 }));
 type P = ReturnType<typeof useStyle>;
 
-export default function SecondSection({ categories }) {
+interface props {
+    categories: Array<string>;
+}
+export default function SecondSection({
+    categories
+}: props): React.ReactElement {
     const style: P = useStyle();
     return (
         <div>
             <ul>
                 <div className={style.about}> About</div>
-                {categories.map((item: Array<string>, i: number) => (
+                {categories.map((item: string, i: number) => (
                     <li className={style.root} key={i}>
                         <a href=""> {item}</a>
                     </li>

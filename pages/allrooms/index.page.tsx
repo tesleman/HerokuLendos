@@ -1,38 +1,42 @@
+import { NextPageContext } from "next";
 import React from "react";
 import Rooms from "../components/Rooms/Rooms";
+import { roomsInterface } from "../index.page";
 
-export default function AllRooms({ rooms }) {
+export default function AllRooms({
+    rooms
+}: roomsInterface): React.ReactElement {
     return (
         <div>
             <Rooms rooms={rooms} />
         </div>
     );
 }
-AllRooms.getInitialProps = (ctx) => {
+AllRooms.getInitialProps = (ctx: NextPageContext) => {
     const rooms = [
         {
-            iamg: "/papaya-800x500.jpg",
+            iamg: ["/papaya-800x500.jpg"],
             h2: "Papaya",
             prise: "399",
             p:
                 "Decsdafatures a queen four possfdgsdfgter bed and a pfdsgfsdgsdfgrivate bath. You enter by walking through the garden."
         },
         {
-            iamg: "/queen.jpg",
+            iamg: ["/queen.jpg"],
             h2: "Papaya Deluxe",
             prise: "359",
             p:
                 "Decorated with an artful tropical flair, Papaya features a queen four poster bed and the garden."
         },
         {
-            iamg: "/bamboo.jpg",
+            iamg: ["/bamboo.jpg"],
             h2: "Deluxe",
             prise: "489",
             p:
                 "Poster bed and a private bath. You enter by walking through the garden."
         },
         {
-            iamg: "/haway.jpg",
+            iamg: ["/haway.jpg"],
             h2: "Deluxe",
             prise: "489",
             p:

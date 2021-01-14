@@ -12,28 +12,28 @@ import { NextPageContext } from "next";
 
 export const roomss = [
     {
-        iamg: "/papaya-800x500.jpg",
+        iamg: ["/papaya-800x500.jpg", "/papaya-800x500.jpg"],
         h2: "Papaya",
         prise: "399",
         p:
             "Decsdafatures a queen four possfdgsdfgter bed and a pfdsgfsdgsdfgrivate bath. You enter by walking through the garden."
     },
     {
-        iamg: "/queen.jpg",
+        iamg: ["/queen.jpg"],
         h2: "Papaya Deluxe",
         prise: "359",
         p:
             "Decorated with an artful tropical flair, Papaya features a queen four poster bed and the garden."
     },
     {
-        iamg: "/bamboo.jpg",
+        iamg: ["/bamboo.jpg"],
         h2: "Deluxe",
         prise: "489",
         p:
             "Poster bed and a private bath. You enter by walking through the garden."
     },
     {
-        iamg: "/haway.jpg",
+        iamg: ["/haway.jpg"],
         h2: "Deluxe",
         prise: "489",
         p:
@@ -41,23 +41,20 @@ export const roomss = [
     }
 ];
 
-const useStyle = makeStyles({
-    // bacground: {
-    //     "&::after": {
-    //         content: '""',
-    //         backgroundColor: "transparent",
-    //         position: "absolute",
-    //         left: 0,
-    //         right: 0,
-    //         top: 0,
-    //         bottom: 0,
-    //         zIndex: -1,
-    //         opacity: 0.3
-    //     }
-    // }
-});
+const useStyle = makeStyles({});
 
-export default function Home({ rooms }) {
+export interface roomInterface {
+    iamg: Array<string>;
+    h2: string;
+    prise: string;
+    p: string;
+}
+
+export interface roomsInterface {
+    rooms: roomInterface[];
+}
+
+export default function Home({ rooms }: roomsInterface) {
     let style = useStyle();
 
     return (
@@ -81,28 +78,28 @@ export default function Home({ rooms }) {
 Home.getInitialProps = (ctx: NextPageContext) => {
     const rooms = [
         {
-            iamg: "/papaya-800x500.jpg",
+            iamg: ["/papaya-800x500.jpg", "/papaya-800x500.jpg"],
             h2: "Papaya",
             prise: "399",
             p:
                 "Decsdafatures a queen four possfdgsdfgter bed and a pfdsgfsdgsdfgrivate bath. You enter by walking through the garden."
         },
         {
-            iamg: "/queen.jpg",
+            iamg: ["/queen.jpg"],
             h2: "Papaya Deluxe",
             prise: "359",
             p:
                 "Decorated with an artful tropical flair, Papaya features a queen four poster bed and the garden."
         },
         {
-            iamg: "/bamboo.jpg",
+            iamg: ["/bamboo.jpg"],
             h2: "Deluxe",
             prise: "489",
             p:
                 "Poster bed and a private bath. You enter by walking through the garden."
         },
         {
-            iamg: "/haway.jpg",
+            iamg: ["/haway.jpg"],
             h2: "Deluxe",
             prise: "489",
             p:

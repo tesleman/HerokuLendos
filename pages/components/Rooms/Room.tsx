@@ -46,15 +46,22 @@ const useStyle = makeStyles((theme: themeType) => ({
     }
 }));
 type P = ReturnType<typeof useStyle>;
+interface propInterface {
+    index: number;
+    iamg: Array<string>;
+    h2: string;
+    prise: string;
+    p: string;
+}
 
-export default function Room({ index, iamg, h2, prise, p }) {
+export default function Room({ index, iamg, h2, prise, p }: propInterface) {
     const style: P = useStyle();
     return (
         <Grid className={style.root} item xs={3}>
             <div className={style.bg}>
                 <div>
                     <Image
-                        src={iamg}
+                        src={iamg[0]}
                         alt="Picture of the author"
                         width={250}
                         height={175}

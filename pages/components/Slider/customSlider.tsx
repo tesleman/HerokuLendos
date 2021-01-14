@@ -53,7 +53,7 @@ export interface itemInterface {
     text?: string;
     img?: string;
 }
-export default function CustomSlider() {
+export default function CustomSlider(): React.ReactElement {
     let style = useStyle();
 
     const slider = React.useRef(null);

@@ -107,7 +107,7 @@ interface categoryTypes {
     subcat?: Array<string>;
 }
 
-export default function s() {
+export default function Navigation(): React.ReactElement {
     let style = useStyles();
 
     const [state, setstate] = React.useState("");

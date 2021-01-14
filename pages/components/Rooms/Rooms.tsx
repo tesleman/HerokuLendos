@@ -1,5 +1,6 @@
 import { Container, Grid, makeStyles } from "@material-ui/core";
 import React from "react";
+import { roomInterface } from "../../index.page";
 import { themeType } from "../../theme";
 import Button from "../Button";
 import Room from "./Room";
@@ -39,7 +40,7 @@ function Rooms({ rooms }) {
 
                 <Grid container>
                     {rooms &&
-                        rooms.map((item, index) => (
+                        rooms.map((item: roomInterface, index: number) => (
                             <Room key={index} {...item} index={index} />
                         ))}
                 </Grid>

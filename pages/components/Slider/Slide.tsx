@@ -45,7 +45,12 @@ const useStyles = makeStyles((props) => ({
         }
     }
 }));
-export default function Slide({ text, img, h1, h2 }: itemInterface) {
+export default function Slide({
+    text,
+    img,
+    h1,
+    h2
+}: itemInterface): React.ReactElement {
     const classes = useStyles();
 
     return (

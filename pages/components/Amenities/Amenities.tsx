@@ -28,7 +28,7 @@ const useStyle = makeStyles((theme: themeType) => ({
 }));
 type P = ReturnType<typeof useStyle>;
 
-export default function Amenities() {
+export default function Amenities(): React.ReactElement {
     const style: P = useStyle();
     return (
         <div className={style.bgc}>

@@ -33,7 +33,7 @@ const location = {
 };
 
 type P = ReturnType<typeof useStyle>;
-export default function BottomMenue() {
+export default function BottomMenue(): React.ReactElement {
     const style: P = useStyle();
     return (
         <div className={style.root}>

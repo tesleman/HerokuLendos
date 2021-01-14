@@ -63,7 +63,7 @@ const useStyle = makeStyles((theme) => ({
     }
 }));
 
-export default function TopLine() {
+export default function TopLine(): React.ReactElement {
     const style = useStyle();
 
     return (
